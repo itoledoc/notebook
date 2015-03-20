@@ -1,0 +1,7942 @@
+
+<html>
+    <head>
+        <title>Pivot Demo</title>
+        <link rel="stylesheet" type="text/css" href="./pivotTable/pivot.css">
+        <script type="text/javascript" src="./pivotTable/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="./pivotTable/jquery-ui-1.9.2.custom.min.js"></script>
+        <script type="text/javascript" src="./pivotTable/pivot.js"></script>
+    </head>
+    <style>
+        * {font-family: Verdana;}
+    </style>
+    <body>
+        <script type="text/javascript">
+            $(function(){
+                    var input = $("#input")
+                    $("#output").pivotUI(input);
+             });
+        </script>
+        
+        <div id="output" style="margin: 10px;"></div>
+        <br /><br /><br />
+        <table id="input" style="display:none" border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Cycle</th>
+      <th>Problem</th>
+      <th>stale</th>
+      <th>proj_started</th>
+      <th>CODE</th>
+      <th>Prj. Problem</th>
+      <th>proj_comp_per</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00008.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00013.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00021.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00033.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00075.S</td>
+      <td> Null PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00075.S</td>
+      <td> Null PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00077.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00077.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00097.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00105.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00122.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00122.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00122.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00123.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00142.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00146.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00165.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00173.S</td>
+      <td> High PCL</td>
+      <td> 0.692308</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00175.S</td>
+      <td>  Low PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00175.S</td>
+      <td>  Low PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00175.S</td>
+      <td>  Low PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00175.S</td>
+      <td>  Low PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00178.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00178.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00182.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00187.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00193.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00196.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00198.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00219.S</td>
+      <td> Null PCL</td>
+      <td> 0.444444</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00237.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00237.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00237.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00237.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00237.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00240.S</td>
+      <td>  Low PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00240.S</td>
+      <td>  Low PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00242.S</td>
+      <td> High PCL</td>
+      <td> 0.166667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00245.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00303.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00306.S</td>
+      <td> High PCL</td>
+      <td> 0.166667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00306.S</td>
+      <td> High PCL</td>
+      <td> 0.166667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00306.S</td>
+      <td> High PCL</td>
+      <td> 0.166667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00306.S</td>
+      <td> High PCL</td>
+      <td> 0.166667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00307.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00317.S</td>
+      <td> High PCL</td>
+      <td> 0.076923</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00321.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00321.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00324.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00327.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00332.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00332.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00334.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00334.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00334.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00334.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00334.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00366.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00366.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00366.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00366.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00368.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00374.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00377.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00395.S</td>
+      <td> Null PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00395.S</td>
+      <td> Null PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00400.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00413.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00422.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00426.S</td>
+      <td> Null PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00426.S</td>
+      <td> Null PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00453.S</td>
+      <td> High PCL</td>
+      <td> 0.851852</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00453.S</td>
+      <td> High PCL</td>
+      <td> 0.851852</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00453.S</td>
+      <td> High PCL</td>
+      <td> 0.851852</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00453.S</td>
+      <td> High PCL</td>
+      <td> 0.851852</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00474.S</td>
+      <td> High PCL</td>
+      <td> 1.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00479.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00479.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00496.S</td>
+      <td>  Low PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00496.S</td>
+      <td>  Low PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00496.S</td>
+      <td>  Low PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00522.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00524.S</td>
+      <td> High PCL</td>
+      <td> 0.555556</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00524.S</td>
+      <td> High PCL</td>
+      <td> 0.555556</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00543.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00550.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00550.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00596.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00596.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00596.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00596.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00596.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00604.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00611.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00611.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00611.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00611.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00621.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00623.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00624.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00624.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00628.T</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00628.T</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00628.T</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00628.T</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00628.T</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00631.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00657.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00671.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00671.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00671.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00678.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00707.S</td>
+      <td> Null PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00707.S</td>
+      <td> Null PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00707.S</td>
+      <td> Null PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00725.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00725.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00761.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00775.S</td>
+      <td> Null PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00775.S</td>
+      <td> Null PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00775.S</td>
+      <td> Null PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00775.S</td>
+      <td> Null PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00781.S</td>
+      <td> High PCL</td>
+      <td> 1.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00784.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00784.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00786.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00799.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.00812.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00826.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00870.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00882.S</td>
+      <td> High PCL</td>
+      <td> 0.800000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00885.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00900.S</td>
+      <td> Null PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00945.S</td>
+      <td> Null PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00978.S</td>
+      <td>  Low PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00978.S</td>
+      <td>  Low PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00979.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00979.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00984.S</td>
+      <td> Null PCL</td>
+      <td> 0.800000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.00997.S</td>
+      <td> Null PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.01011.S</td>
+      <td> High PCL</td>
+      <td> 0.571429</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.01011.S</td>
+      <td> High PCL</td>
+      <td> 0.571429</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.01011.S</td>
+      <td> High PCL</td>
+      <td> 0.571429</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2012.1.01020.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01022.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01029.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01029.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01029.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01029.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01057.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01057.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 1</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2012.1.01123.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00001.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00008.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00014.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00014.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00018.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00018.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00018.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00018.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00020.S</td>
+      <td> High PCL</td>
+      <td> 0.700000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00020.S</td>
+      <td> High PCL</td>
+      <td> 0.700000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00021.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00025.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00025.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00031.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00032.S</td>
+      <td> Null PCL</td>
+      <td> 0.133333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00033.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00033.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00041.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00041.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00046.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00046.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00048.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00048.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00048.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00048.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00053.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00055.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00055.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00055.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00056.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00059.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00060.S</td>
+      <td> High PCL</td>
+      <td> 0.833333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00061.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00061.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00061.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00061.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00063.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00063.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00063.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00063.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00063.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00063.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00063.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00071.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00073.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00073.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00080.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00087.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00088.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00095.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00095.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00095.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00095.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00099.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00099.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00099.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00100.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00100.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00100.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00105.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00105.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00105.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00105.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00105.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00111.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00112.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00116.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00116.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00122.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00126.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00126.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00126.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00139.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00139.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00139.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00139.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00139.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00147.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00148.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00156.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00156.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00156.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00157.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00157.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00162.S</td>
+      <td> High PCL</td>
+      <td> 0.555556</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00163.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00163.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00164.S</td>
+      <td> High PCL</td>
+      <td> 0.375000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00164.S</td>
+      <td> High PCL</td>
+      <td> 0.375000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00164.S</td>
+      <td> High PCL</td>
+      <td> 0.375000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00164.S</td>
+      <td> High PCL</td>
+      <td> 0.375000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00166.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00168.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00170.S</td>
+      <td> High PCL</td>
+      <td> 0.833333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00171.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00171.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00180.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00180.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00180.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00180.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00183.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00186.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00186.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00188.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00188.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00188.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00188.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00191.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00195.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00195.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00196.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00198.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00198.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00198.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00198.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00199.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00199.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00205.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00208.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00208.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00208.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00208.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00209.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00210.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00211.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00212.S</td>
+      <td>  Low PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00212.S</td>
+      <td>  Low PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00216.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00218.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00218.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00218.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00220.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00220.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00221.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00221.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00226.S</td>
+      <td>  Low PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00226.S</td>
+      <td>  Low PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00226.S</td>
+      <td>  Low PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00226.S</td>
+      <td>  Low PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00227.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00227.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00227.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00229.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00229.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00231.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00231.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00234.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00243.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00244.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00244.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00248.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00248.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00250.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00251.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00251.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00251.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00252.S</td>
+      <td> High PCL</td>
+      <td> 0.166667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00252.S</td>
+      <td> High PCL</td>
+      <td> 0.166667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00254.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00254.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00255.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00257.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00260.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00262.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00266.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00269.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00269.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00271.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00271.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00276.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00276.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00278.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00279.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00279.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00279.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00280.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00280.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00280.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00280.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00280.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00286.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00287.S</td>
+      <td> Null PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00287.S</td>
+      <td> Null PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00287.S</td>
+      <td> Null PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00291.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00291.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00293.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00293.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00296.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00296.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00305.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00305.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00305.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00305.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00319.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00319.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00327.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00327.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00328.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00328.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00331.S</td>
+      <td>  Low PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00331.S</td>
+      <td>  Low PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00332.S</td>
+      <td> High PCL</td>
+      <td> 0.571429</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00332.S</td>
+      <td> High PCL</td>
+      <td> 0.571429</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00338.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00338.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00346.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00349.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00352.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00352.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00355.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00358.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00359.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00362.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00367.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00367.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00368.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00368.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00368.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00374.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00380.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00387.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00387.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00393.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00403.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00404.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00404.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00426.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00426.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00430.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00432.S</td>
+      <td> High PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00432.S</td>
+      <td> High PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00432.S</td>
+      <td> High PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00432.S</td>
+      <td> High PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00432.S</td>
+      <td> High PCL</td>
+      <td> 0.642857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00433.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00433.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00450.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00451.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00458.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00458.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00459.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00469.S</td>
+      <td> Null PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00469.S</td>
+      <td> Null PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00470.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00470.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00470.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00470.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00470.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00474.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00474.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00474.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00476.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00481.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00489.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00489.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00489.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00493.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00493.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00493.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00498.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00502.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00513.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00516.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00521.S</td>
+      <td> High PCL</td>
+      <td> 0.615385</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00521.S</td>
+      <td> High PCL</td>
+      <td> 0.615385</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00521.S</td>
+      <td> High PCL</td>
+      <td> 0.615385</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00521.S</td>
+      <td> High PCL</td>
+      <td> 0.615385</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00524.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00524.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00524.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00524.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00524.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00525.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00525.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00525.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00525.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00526.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00527.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00527.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00527.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00532.S</td>
+      <td> High PCL</td>
+      <td> 0.600000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00535.S</td>
+      <td> High PCL</td>
+      <td> 0.083333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00537.S</td>
+      <td> Null PCL</td>
+      <td> 0.125000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00537.S</td>
+      <td> Null PCL</td>
+      <td> 0.125000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00537.S</td>
+      <td> Null PCL</td>
+      <td> 0.125000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00537.S</td>
+      <td> Null PCL</td>
+      <td> 0.125000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00537.S</td>
+      <td> Null PCL</td>
+      <td> 0.125000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00537.S</td>
+      <td> Null PCL</td>
+      <td> 0.125000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00537.S</td>
+      <td> Null PCL</td>
+      <td> 0.125000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00566.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00568.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00569.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00569.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00569.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00576.S</td>
+      <td>  Low PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00576.S</td>
+      <td>  Low PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00576.S</td>
+      <td>  Low PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00576.S</td>
+      <td>  Low PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00576.S</td>
+      <td>  Low PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00576.S</td>
+      <td>  Low PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00582.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00591.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00591.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00601.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00647.S</td>
+      <td> Null PCL</td>
+      <td> 0.600000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00647.S</td>
+      <td> Null PCL</td>
+      <td> 0.600000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00650.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00652.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00652.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00652.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00652.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00658.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00658.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00658.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00658.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00663.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00663.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00664.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00664.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00664.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00664.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00664.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00668.S</td>
+      <td> High PCL</td>
+      <td> 0.600000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00668.S</td>
+      <td> High PCL</td>
+      <td> 0.600000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00670.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00694.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00694.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00700.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00704.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00708.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00710.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00725.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00726.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00726.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00727.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00735.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00735.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00736.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00736.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00740.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00740.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00742.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00745.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00749.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00764.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00764.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00764.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00773.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00781.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00781.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00781.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00783.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00786.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00786.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00788.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00788.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00788.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00793.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00793.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00798.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00798.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00803.S</td>
+      <td> High PCL</td>
+      <td> 0.857143</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00806.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00806.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00812.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00812.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00813.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00813.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00813.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00813.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00813.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00814.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00815.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00824.S</td>
+      <td> High PCL</td>
+      <td> 0.555556</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00824.S</td>
+      <td> High PCL</td>
+      <td> 0.555556</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00824.S</td>
+      <td> High PCL</td>
+      <td> 0.555556</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00824.S</td>
+      <td> High PCL</td>
+      <td> 0.555556</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00828.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00828.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00831.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00832.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00833.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00833.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00834.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00839.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00839.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00839.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00854.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00857.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00857.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00858.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00858.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00870.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00877.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00877.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00877.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00877.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00880.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00880.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00880.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00880.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00880.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00884.S</td>
+      <td> High PCL</td>
+      <td> 0.857143</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00885.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00885.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00889.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00889.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00889.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00897.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00902.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00902.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00907.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00916.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00922.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00955.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00960.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00960.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00960.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00960.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00960.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00965.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00965.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00967.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00967.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00967.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00967.S</td>
+      <td> High PCL</td>
+      <td> 0.428571</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00973.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00973.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00975.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00988.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00988.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00988.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00988.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00989.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00989.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00989.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00989.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00989.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00989.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00991.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.00991.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.00994.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01004.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01004.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01007.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01007.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01010.S</td>
+      <td> High PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01010.S</td>
+      <td> High PCL</td>
+      <td> 0.142857</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01014.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01020.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01020.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01020.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01020.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01022.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01034.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01034.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01035.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01036.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01036.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01037.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01037.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01037.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01051.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01051.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01052.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01057.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01057.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01057.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01057.S</td>
+      <td> High PCL</td>
+      <td> 0.714286</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01058.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01064.S</td>
+      <td> High PCL</td>
+      <td> 0.750000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01065.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01065.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01065.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01070.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01070.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01070.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01075.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01075.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01086.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01086.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01086.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01086.S</td>
+      <td> Null PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01099.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01099.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01102.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01102.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01102.S</td>
+      <td> High PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01110.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01113.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01113.S</td>
+      <td> High PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01119.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01119.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01119.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01136.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01139.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01139.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01139.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01142.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01147.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01147.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01147.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01147.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01147.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01153.S</td>
+      <td>  Low PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01153.S</td>
+      <td>  Low PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01153.S</td>
+      <td>  Low PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01153.S</td>
+      <td>  Low PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01155.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01155.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01157.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01157.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01158.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01161.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01161.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01161.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01161.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01161.S</td>
+      <td> High PCL</td>
+      <td> 0.285714</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01165.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01165.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01167.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01167.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01167.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01167.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01172.S</td>
+      <td> High PCL</td>
+      <td> 0.900000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01188.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01188.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01188.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01192.S</td>
+      <td> Null PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01192.S</td>
+      <td> Null PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01192.S</td>
+      <td> Null PCL</td>
+      <td> 0.250000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01194.S</td>
+      <td> High PCL</td>
+      <td> 1.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01202.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01202.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01207.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01215.S</td>
+      <td> High PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01225.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01225.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01225.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01230.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01230.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01230.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01230.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01231.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01231.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01231.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01231.S</td>
+      <td> Null PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01239.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01255.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01255.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01258.S</td>
+      <td> Null PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01258.S</td>
+      <td> Null PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01262.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01262.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01262.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01271.S</td>
+      <td> High PCL</td>
+      <td> 0.333333</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01274.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01282.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01286.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01295.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01295.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01299.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01299.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01307.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01312.S</td>
+      <td> High PCL</td>
+      <td> 0.666667</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01329.S</td>
+      <td> Null PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01329.S</td>
+      <td> Null PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01329.S</td>
+      <td> Null PCL</td>
+      <td> 0.400000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01330.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> Null SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01331.S</td>
+      <td> Null PCL</td>
+      <td> 0.500000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Stale</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01365.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Stale</td>
+      <td> 2013.1.01365.S</td>
+      <td> High PCL</td>
+      <td> 0.200000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01368.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01380.S</td>
+      <td> High PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td> High SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01397.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+    <tr>
+      <td> Cycle 2</td>
+      <td>  Low SBEL</td>
+      <td> SB Ready</td>
+      <td> Prj. Ready</td>
+      <td> 2013.1.01397.S</td>
+      <td>  Low PCL</td>
+      <td> 0.000000</td>
+    </tr>
+  </tbody>
+</table>
+
+    </body>
+</html>
