@@ -1,0 +1,721 @@
+---
+title: "QA0 Report"
+author: "PMG Group"
+output:
+  pdf_document:
+    fig_caption: yes
+    fig_crop: no
+    fig_width: 8
+    keep_tex: yes
+    number_sections: yes
+geometry: margin=0.5in
+fontsize: 10pt
+---
+
+```{r echo=FALSE, message=FALSE, warning=F}
+library(png)
+library(gridExtra)
+library(ggplot2)
+library(ggthemes)
+library(quantreg)
+library(pander)
+library(dplyr)
+library(knitr)
+library(locfit)
+theme_set(theme_bw())
+
+dire <- "Xa16f89_X1e17/"
+
+antennas <- read.csv(paste(dire, 'antennas.csv', sep = ""))
+caldata <- read.csv(paste(dire, 'caldata.csv', sep = ""))
+
+atmosphere <- read.csv(paste(dire, 'atmosphere.csv', sep = ""))
+atmosphere$TIME <- as.POSIXct(atmosphere$TIME, 'GMT')
+atmosphere <- subset(atmosphere, tsys_X != 0 & tsys_Y != 0)
+atmosphere <- 
+  left_join(atmosphere,
+            select(caldata, CALDATA_ID, SCAN),
+            by='CALDATA_ID')
+
+delay <- read.csv(paste(dire, 'delay.csv', sep = ""))
+delay$TIME <- as.POSIXct(delay$TIME, 'GMT')
+
+field <- read.csv(paste(dire, 'field.csv', sep = ""))
+fieldsrc <- read.csv(paste(dire, 'fieldsource.csv', sep = ""))
+flags <- read.csv(paste(dire, 'flags.csv', sep = ""))
+focus <- read.csv(paste(dire, 'focus.csv', sep = ""))
+main <- read.csv(paste(dire, 'main.csv', sep = ""))
+
+phase <- read.csv(paste(dire, 'phase.csv', sep = ""))
+phase <- 
+  left_join(phase,
+            select(caldata, CALDATA_ID, SCAN),
+            by='CALDATA_ID')
+point <- read.csv(paste(dire, 'point_qa0.csv', sep = ""))
+point_trend <- read.csv(paste(dire, 'point_qa1.csv', sep = ""))
+
+sbsum <- read.csv(paste(dire, 'sbsum.csv', sep = ""))
+sbsum$RA <- sbsum$RA / 15
+
+scan <- read.csv(paste(dire, 'scan.csv', sep = ""))
+scan$START_TIME <- as.POSIXct(scan$START_TIME, 'GMT')
+scan$END_TIME <- as.POSIXct(scan$END_TIME, 'GMT')
+
+scparam <- read.csv(paste(dire, "scienceparam.csv", sep = ""))
+slt <- read.csv(paste(dire, 'slt.csv', sep = ""))
+subscan <- read.csv(paste(dire, 'subscans.csv', sep = ""))
+subscan$START_TIME <- as.POSIXct(subscan$START_TIME, 'GMT')
+subscan$END_TIME <- as.POSIXct(subscan$END_TIME, 'GMT')
+subscan$delta <- difftime(subscan$END_TIME,subscan$START_TIME, units="secs")
+wvr <- read.csv(paste(dire, 'wvr.csv', sep = ""))
+wvr$TIME <- as.POSIXct(wvr$START_TIME, 'GMT')
+
+calamp <- read.csv(paste(dire, 'cal_amp.csv', sep = ""))
+
+trec_max <- data.frame(bands = c("ALMA_RB_03", "ALMA_RB_04", "ALMA_RB_06",
+                                 "ALMA_RB_07", "ALMA_RB_08", "ALMA_RB_09",
+                                 "ALMA_RB_10"),
+                       temp = c(45 * 1.5, 82 * 1.1, 136 * 1.1,
+                                219 * 1.1, 292 * 1.1, 261 * 1.1,
+                                344 * 1.1))
+trec_max$bands <- as.character(trec_max$bands)
+
+deg_to_dms <- function(degfloat) {
+  if (degfloat < 0) {
+    neg <- TRUE
+    degfloat <- -1 * degfloat
+  } else {
+    neg <- FALSE
+  }
+  degi <- as.integer(degfloat)
+  deg <- sprintf("%02d", degi)
+  minfloat <- 60 * (degfloat - degi)
+  mini <- as.integer(minfloat)
+  min <- sprintf("%02d", mini)
+  secfloat <- 60 * (minfloat - mini)
+  secfloat <- sprintf("%05.2f", secfloat)
+  if (neg) {
+    deg <- paste("-", deg, sep="")
+  }
+  
+  dm <- paste(deg, min, sep=":")
+  dms <- paste(dm, secfloat, sep=":")
+  return (dms)
+}
+```
+
+# EB, SB and Array Information
+
+```{r warning=FALSE, echo=FALSE, message=FALSE}
+names(slt) <- 
+  c("EB UID:", "Start Time:", "Number of Scans:", "EB Status:", "SB UID:",
+    "SB Name:",  "Project Code:", "Array Name:", "Array Family:", 
+    "Correlator:", "SE_ID", "SE_SUBJECT")
+
+kable(t(slt[,c(-11,-12)]),
+      col.names = c('Value'),
+      align ='r',
+      caption = "Execution Block Information.",
+      booktabs = TRUE)
+
+sbsumt <- select(
+  sbsum, SB_UID, sbName, CODE, band, repfreq, RA, DEC, 
+  minArrayAR100GHz, maxArrayAR100GHz, AR100GHz, LAS100GHz, bestconf)
+
+names(sbsumt) <- c(
+  "SB UID:", "SB Name:", "Project Code:", "Band:", "Representtive Freq.:", 
+  "RA:", "DEC:", "Min. Array AR (100GHz):", "Max. Array AR (100GHz):", 
+  "SB req. AR (100GHz):", "SB req. LAS (100GHz):", "Best Configuration:")
+
+tsbsumt <- t(sbsumt)
+tsbsumt[5,1] <- paste(format(as.numeric(tsbsumt[5,1]), digits=2, nsmall=2),
+                      "GHz.")
+tsbsumt[6,1] <- deg_to_dms(as.numeric(tsbsumt[6,1]))
+tsbsumt[7,1] <- deg_to_dms(as.numeric(tsbsumt[7,1]))
+tsbsumt[8,1] <- paste(format(as.numeric(tsbsumt[8,1]), digits=2, nsmall=2),
+                      "arcsec.")
+tsbsumt[9,1] <- paste(format(as.numeric(tsbsumt[9,1]), digits=2, nsmall=2),
+                      "arcsec.")
+tsbsumt[10,1] <- paste(format(as.numeric(tsbsumt[10,1]), digits=2, nsmall=2),
+                      "arcsec.")
+tsbsumt[11,1] <- paste(format(as.numeric(tsbsumt[11,1]), digits=2, nsmall=2),
+                      "arcsec.")
+
+kable(tsbsumt,
+  col.names = c('Value'),
+  align ='r',
+  caption = "Scheduling Block Information.",
+  digits = 1
+  )
+
+# EB Execution Time
+ttot <- difftime(max(scan$END_TIME), min(scan$START_TIME), units='mins')
+
+target_scan <- scan %>% subset(SCAN_INTENT == "OBSERVE_TARGET") 
+target_subscan <- subscan %>% subset(SCAN %in% target_scan$SCAN & INTENT == "ON_SOURCE")
+
+time_on_source <- sum(target_subscan$delta)
+
+
+```
+
+Num Antennas: `r length(antennas$ANTENNA)`.
+
+Total Execution Time: `r format(ttot, digits = 3, nsmall=1)`.
+
+EB Integration Time on Source: `r format(as.numeric(time_on_source, units="mins"), digits = 3, nsmall=1)` mins.
+
+SB Requested Time on Source: `r format(nrow(fieldsrc) * scparam$intTime / 60, digits = 3, nsmall = 1)` mins.
+
+Is Polarization? `r ifelse(as.logical(sbsum$isPolarization[1]) == TRUE, "True", "False")`.
+
+
+# QA0 Summary
+
+## Check Flagged Data
+
+```{r flags, warning=FALSE, echo=FALSE, message=FALSE, results='asis'}
+# Summary of flags
+flags <- left_join(flags, select(antennas, ANTENNA_ID, ANTENNA), by='ANTENNA_ID')
+
+flag_sum <- 
+  flags %>%
+  group_by(ANTENNA) %>% 
+  summarise(flags = n(), total = sum(delta) / 60.)
+
+
+
+# Creating a list of antennas with more than 10% of the data flagged
+# Maybe better to use the median to set limit? % is missleading with small ttot
+antenna_flag <- 
+  as.character(subset(flag_sum, total > 0.15 * as.numeric(ttot))$ANTENNA)
+
+flag_high <- subset(flag_sum, total > 0.15 * as.numeric(ttot))
+
+if (length(antenna_flag) > 0) {
+  kable(subset(flags, ANTENNA %in% antenna_flag) %>% 
+          group_by(ANTENNA, REASON) %>% 
+          summarise(Tot = sum(delta) / 60.) %>%
+          arrange(-Tot),
+        digits = 2)
+} else {
+  cat("No antennas with more than 10% of data flagged.")
+}
+```
+
+## Check Calibration Intents
+
+```{r warning=FALSE, echo=FALSE, message=FALSE, results='asis'}
+qaflag <- "Pass"
+calint <- scan %>% group_by(SCAN_INTENT) %>% summarise(scanNum = n())
+
+intents <- c("CALIBRATE_BANDPASS", "CALIBRATE_SIDEBAND_RATIO",
+             "CALIBRATE_POINTING", "CALIBRATE_AMPLI", "CALIBRATE_PHASE")
+
+if (!"OBSERVE_TARGET" %in% calint$SCAN_INTENT) {
+  cat("No time on Source! Fail QA0.")
+  qaflag <- "FAIL"
+}
+
+for (i in intents) {
+  if (i %in% calint$SCAN_INTENT) {
+    next
+  }
+  else {
+    cat("The following Intent is missing: ", i)
+    qaflag <- "Pass"
+    break
+  }
+}
+
+cat(qaflag)
+```
+
+## Check Mosaic Coverage / Pointings
+
+```{r warning=FALSE, echo=FALSE, message=FALSE, results='asis'}
+qaflag <- "Pass"
+field_tar <- as.character(unique(target_subscan$FIELD_NAME))
+
+for (f in field_tar) {
+  field_sel <- field %>% subset(FIELD_NAME == f)
+  field_sscan <- target_subscan %>% subset(FIELD_NAME == f)
+  # cat(format(nrow(field_sel) - 1), "\n")
+  sb_src <- fieldsrc %>% subset(sourcename == f)
+  # cat(sb_src$pointings, "\n")
+  # cat(nrow(field_sscan), "\n")
+  fract <- nrow(field_sscan) / sb_src$pointings
+  if (fract - trunc(fract) != 0) {
+    cat("There is some problem in mosaic coverage \n")
+    qaflag <- "SEMIPASS"
+  }
+}
+
+cat(qaflag)
+```
+
+## Check Array Resolution
+
+## Check Atmosphere Calibrations
+
+```{r atm, warning=FALSE, echo=FALSE, message=FALSE, results='asis'}
+# Remove flagged antennas from the atmosphere table
+atmclean <- atmosphere
+if (length(antenna_flag) > 0) {
+  atmclean <- 
+    subset(atmclean,
+           !as.character(ANTENNA) %in% as.character(antenna_flag))
+}
+
+# Create summary of sbgain per antenna, per BB, per polarizations
+atmgain <-
+  atmosphere %>%
+  group_by(ANTENNA, BB) %>%
+  summarise(sbgainX = median(sbgain_X), sbgainY = median(sbgain_Y))
+
+# Detect sbgain outliers
+if (as.character(sbsum[1, 'band']) != "ALMA_RB_09") {
+  outgain <- subset(atmgain, sbgainX < 0.9 | sbgainY < 0.9)
+} else {
+  outgain <- subset(atmgain, (sbgainX < 0.3 | sbgainX > 0.7) | 
+                      (sbgainY < 0.3 | sbgainY > 0.7))
+}
+
+# Any antenna with outliers is removed from further analysis
+if (nrow(outgain) > 0) {
+  atmclean <- 
+    subset(atmclean,
+           !as.character(ANTENNA) %in% as.character(outgain$ANTENNA))
+  cat("Antenna(s)", as.character(unique(outgain$ANTENNA)), "have SBgain outside spec (see details).")
+}
+
+# First atmosphere summary, fot remove bad scans
+atmsum1 <-
+  atmclean %>%
+  group_by(SCAN, BB) %>% 
+  summarise(trecX = median(trec_X), trecY = median(trec_Y), 
+            tsysX = median(tsys_X), tsysY = median(tsys_Y))
+# limit temperatured for Trec
+tlim <- trec_max[
+  as.character(trec_max$bands) == as.character(sbsum[1, 'band']),
+  2]
+
+# Create list of Scans with issues
+atmscan_bad <-
+  atmsum1 %>%
+  subset(trecX < 0 | trecY < 0 | tsysX < 0 | tsysY < 0 |
+         trecX > tlim | trecY > tlim | tsysX > 5e3 | tsysY > 5e3)
+
+# Any missing atmosphere scan reduced?
+
+check_sa <- 
+  scan[scan$SCAN_INTENT == "CALIBRATE_ATMOSPHERE", 'SCAN'] %in% 
+  caldata[caldata$CAL_INTENT == "CAL_ATMOSPHERE", 'SCAN']
+
+if (FALSE %in% check_sa) {
+  cat("Missing at least one Telcal online reduction. Semipass?\n")
+}
+
+# Remove bad Scans from further analysis
+if (nrow(atmscan_bad) > 0) {
+  atmclean <-
+    subset(atmclean, !as.character(SCAN) %in% as.character(atmscan_bad$SCAN))
+}
+
+# Detect antennas with gross temperature problems
+atmant_bad <- 
+  atmclean %>% 
+  subset(tsys_X < 0 | tsys_Y < 0 | trec_X < 0 | trec_Y < 0 |
+         trec_X > tlim | trec_Y > tlim | tsys_X > 5e3 | tsys_Y > 5e3,
+         select = c(ANTENNA, SCAN, BB, trec_X, trec_Y, tsys_X, tsys_Y)) %>%
+  arrange(SCAN, ANTENNA, BB)
+
+# Removed temp bad antennas from further analysis
+if (nrow(atmant_bad) > 0) {
+  atmclean <- 
+    subset(atmclean,
+           !as.character(ANTENNA) %in% as.character(atmant_bad$ANTENNA))
+}
+
+# Create summary 2, to detect mild outliers
+atmsum2 <-
+  atmclean %>%
+  group_by(SCAN, BB) %>% 
+  summarise(trX_min = boxplot.stats(trec_X, coef=2)$stat[1],
+            trY_min = boxplot.stats(trec_Y, coef=2)$stat[1], 
+            trX_max = boxplot.stats(trec_X, coef=2)$stat[5],
+            trY_max = boxplot.stats(trec_Y, coef=2)$stat[5],
+            tsX_min = boxplot.stats(tsys_X, coef=2)$stat[1],
+            tsY_min = boxplot.stats(tsys_Y, coef=2)$stat[1], 
+            tsX_max = boxplot.stats(tsys_X, coef=2)$stat[5],
+            tsY_max = boxplot.stats(tsys_Y, coef=2)$stat[5])
+
+# Detect atmosphere table warnings
+atmclean <- left_join(atmclean, atmsum2, by=c('SCAN', 'BB'))
+
+atmant_warn <-
+  atmclean %>%
+  subset(trec_X < trX_min | 
+         trec_Y < trY_min | 
+         tsys_X < tsX_min | 
+         tsys_Y < tsY_min |
+         trec_X > trX_max | 
+         trec_Y > trY_max | 
+         tsys_X > tsX_max | 
+         tsys_Y > tsY_max )
+
+atmclean$rn <- row.names(atmclean)
+
+
+# Remove the ouliers for plotting and stat tables
+if (nrow(atmant_warn) > 0) {
+  atmant_warn$rn <- row.names(atmant_warn)
+  atmclean <- 
+    subset(atmclean,
+           !rn %in% atmant_warn$rn)
+}
+
+# Final cleaned summary
+atmsum1 <-
+  atmclean %>%
+  group_by(SCAN, BB) %>% 
+  summarise(trecX = median(trec_X), trecY = median(trec_Y), 
+            tsysX = median(tsys_X), tsysY = median(tsys_Y))
+
+## We need to summarise atmosphere by using outgain, atmscan_bad, atmant_bad,
+## atmant_warn
+```
+
+## Check Phase Calibrations.
+
+```{r pha, warning=FALSE, echo=FALSE, message=FALSE, eval=FALSE}
+# Remove Flagged
+
+phase <- phase %>% subset(!as.character(ANT1) %in% antenna_flag | 
+                            !as.character(ANT2) %in% antenna_flag)
+phscan <- phase %>% group_by(SCAN) %>% summarise(scan = n())
+phBB <- phase %>% group_by(BB) %>% summarise(scan = n())
+phPOL <- phase %>% group_by(POL) %>% summarise(scan = n())
+
+ch = 0
+cha = 0
+for (s in phscan$SCAN) {
+  for (bb in phBB$BB) {
+    for (pol in phPOL$POL) {
+      phsbp <- subset(phase, SCAN == s & BB == bb & POL == pol)
+      fit1 <- rqss(phsbp$PHASE_RMS~qss(phsbp$BLLENGTH, lambda=20),tau=0.05)
+      fit2 <- rqss(phsbp$PHASE_RMS~qss(phsbp$BLLENGTH, lambda=20),tau=0.95)
+      
+      fita1 <- rqss(phsbp$AMP~qss(phsbp$BLLENGTH, lambda=20),tau=0.05)
+      
+      phf <- phsbp[(phsbp$PHASE_RMS < fitted(fit1)) | 
+                     (phsbp$PHASE_RMS > fitted(fit2)), ]
+      
+      phfa <- phsbp[(phsbp$AMP < fitted(fita1)), ]
+      
+      a1 <- phf %>% group_by(ANT1) %>% summarise(flagged = n())
+      a2 <- phf %>% group_by(ANT2) %>% summarise(flagged = n())
+      
+      aa1 <- phfa %>% group_by(ANT1) %>% summarise(flagged = n())
+      aa2 <- phfa %>% group_by(ANT2) %>% summarise(flagged = n())
+      
+      names(a2)[1] <- 'ANT1'
+      names(aa2)[1] <- 'ANT1'
+      
+      j <- full_join(a1, a2, by='ANT1')
+      j[is.na(j$flagged.x), 'flagged.x'] <- 0
+      j[is.na(j$flagged.y), 'flagged.y'] <- 0
+      j$flag <- (j$flagged.x + j$flagged.y) / length(antennas$ANTENNA)
+      j <- j[j$flag > 0.49,]
+      
+      if (nrow(j) > 0) {
+        j$SCAN <- s
+        j$BB <- bb
+        j$POL <- pol
+        if (ch == 0) {
+          ph_flag <- j
+          ch = 1
+        } else {
+          ph_flag <- bind_rows(ph_flag, j)
+        }
+      }
+      
+      j <- full_join(aa1, aa2, by='ANT1')
+      j[is.na(j$flagged.x), 'flagged.x'] <- 0
+      j[is.na(j$flagged.y), 'flagged.y'] <- 0
+      j$flag <- (j$flagged.x + j$flagged.y) / length(antennas$ANTENNA)
+      j <- j[j$flag > 0.49,]
+      
+      if (nrow(j) > 0) {
+        j$SCAN <- s
+        j$BB <- bb
+        j$POL <- pol
+        if (cha == 0) {
+          pha_flag <- j
+          cha = 1
+        } else {
+          pha_flag <- bind_rows(pha_flag, j)
+        }
+      }
+    }
+  }
+}
+```
+
+
+```{r pha2, warning=FALSE, echo=FALSE, message=FALSE}
+# Remove Flagged
+
+phase <- phase %>% subset(!as.character(ANT1) %in% antenna_flag | 
+                            !as.character(ANT2) %in% antenna_flag)
+phscan <- phase %>% group_by(SCAN) %>% summarise(scan = n())
+phBB <- phase %>% group_by(BB) %>% summarise(scan = n())
+phPOL <- phase %>% group_by(POL) %>% summarise(scan = n())
+
+ch = 0
+for (s in phscan$SCAN) {
+  for (bb in phBB$BB) {
+    for (pol in phPOL$POL) {
+      phsbp <- subset(phase, SCAN == s & BB == bb & POL == pol) %>% arrange(BLLENGTH)
+      results <- locfit(phsbp$PHASE_RMS ~ lp(phsbp$BLLENGTH, h=30))
+      
+      sigmasqrhat = sum(residuals(results)^2) / 
+        (nrow(phsbp) - 2 * as.numeric(results$dp[6]) + 
+           as.numeric(results$dp[7]))
+      
+      critval = kappa0(results)$crit.val
+      normell <- predict(results, where='data', what='vari')
+      
+      fit1 <- predict(results, phsbp) + 3 * critval*sqrt(sigmasqrhat*normell)
+      fit2 <- predict(results, phsbp) - 3 * critval*sqrt(sigmasqrhat*normell)
+      
+#       plot(phsbp$BLLENGTH, phsbp$PHASE_RMS, cex=.2, ylim = c(0,120))
+#       lines(phsbp$BLLENGTH, predict(results, phsbp))
+#       lines(phsbp$BLLENGTH, fit1)
+#       lines(phsbp$BLLENGTH, fit2)
+
+      phf <- phsbp[(phsbp$PHASE_RMS < fit2) | 
+                     (phsbp$PHASE_RMS > fit1), ]
+      
+      a1 <- phf %>% group_by(ANT1) %>% summarise(flagged = n())
+      a2 <- phf %>% group_by(ANT2) %>% summarise(flagged = n())
+
+      names(a2)[1] <- 'ANT1'
+      
+      j <- full_join(a1, a2, by='ANT1')
+      j[is.na(j$flagged.x), 'flagged.x'] <- 0
+      j[is.na(j$flagged.y), 'flagged.y'] <- 0
+      j$flag <- (j$flagged.x + j$flagged.y) / length(antennas$ANTENNA)
+      j <- j[j$flag > 0.65,]
+      
+      if (nrow(j) > 0) {
+        j$SCAN <- s
+        j$BB <- bb
+        j$POL <- pol
+        if (ch == 0) {
+          ph_flag <- j
+          ch = 1
+        } else {
+          ph_flag <- bind_rows(ph_flag, j)
+        }
+      }
+    }
+  }
+}
+
+```
+
+## Check Pointing Calibrations.
+
+```{r point, warning=FALSE, echo=FALSE, message=FALSE, results='asis'}
+point <- point %>%
+  subset(!as.character(ANTENNA) %in% antenna_flag)
+
+point$off <- sqrt( point$REL_OFF_X ** 2 + point$REL_OFF_Y ** 2 )
+
+posum <- point %>% 
+  group_by(ANTENNA) %>% 
+  summarise(rms = sd(off), limit = median(BW_X) / 10.) %>%
+  subset(rms > limit)
+
+point_trend <- point_trend %>%
+  subset(!as.character(ANTENNA) %in% antenna_flag)
+
+point_trend$off <- sqrt( point_trend$REL_OFF_X ** 2 + point_trend$REL_OFF_Y ** 2 )
+
+trendsum <- point_trend %>% 
+  group_by(ANTENNA) %>% 
+  summarise(rms = sd(off), points = n()) %>%
+  subset(rms > 2)
+
+if (nrow(posum) > 0) {
+  kable(posum, row.names = FALSE)
+} else {
+  cat("No Antennas with Pointing issues within the EB results")
+}
+
+if (nrow(trendsum) > 0) {
+  kable(trendsum, row.names = FALSE)
+} else {
+  cat("No Antennas with Pointing issues within the last 10 hours.")
+}
+
+
+```
+
+
+## Check Latest Focus.
+
+
+## Check Latest Delay.
+
+\pagebreak
+
+# Pointing / Mosaic Details
+
+```{r warning=FALSE, echo=FALSE, message=FALSE}
+ggplot(aes(RA/15., DEC), data = fieldsrc) +
+  geom_point(color = 'blue', size = 10, alpha = 0.3) +
+  geom_point(aes(RA/15., DEC), data=subset(field, as.character(FIELD_NAME) %in% as.character(target_subscan$FIELD_NAME)))
+```
+
+\pagebreak
+
+# Scans Information
+
+```{r warning=FALSE, echo=FALSE, message=FALSE}
+kable(
+  select(scan, SCAN, NUM_SUBSCAN, START_TIME, END_TIME, SCAN_INTENT, 
+         FIELD_NAME),
+  col.names = c('Scan', 'SubSc.', 'Start', 'End', 'Intent', 'Field'))
+```
+
+\pagebreak
+
+# Atmosphere Details
+
+```{r warning=FALSE, echo=FALSE, message=FALSE}
+# kable(outgain, row.names = F)
+
+kable(atmsum1, row.names = F)
+
+if (nrow(outgain) > 0) {
+  kable(outgain, row.names = F)
+}
+
+if (nrow(atmscan_bad) > 0) {
+  kable(atmscan_bad, row.names = F)
+}
+
+if (nrow(atmant_bad) > 0) {
+  kable(atmant_bad, row.names = F)
+}
+
+if (nrow(atmant_warn) > 0) {
+  warn_sum <- 
+    select(atmant_warn, SCAN, ANTENNA, BB, trec_X, trec_Y, tsys_X, tsys_Y) %>% 
+    group_by(ANTENNA, BB) %>% 
+    summarise(Scans = n())
+  kable(arrange(warn_sum, ANTENNA), row.names = F)
+}
+
+
+```
+
+```{r dpi=180, fig.height=9, warning=FALSE, echo=FALSE, message=FALSE}
+p1 <- ggplot(aes(factor(SCAN), trec_X), data=atmclean) + 
+  geom_point(aes(color=ANTENNA), position=position_jitter(w=0.1, h=0)) + 
+  geom_boxplot(coef=2) + 
+  facet_wrap( ~ BB, ncol=1) + 
+  xlab('SCAN #') + ylab('TRec, Pol. X') + 
+  guides(color=FALSE)
+
+p2 <- ggplot(aes(factor(SCAN), trec_Y), data=atmclean) +  
+  geom_point(aes(color=ANTENNA), position=position_jitter(w=0.1, h=0)) + 
+  geom_boxplot(coef=2) + 
+  facet_wrap( ~ BB, ncol=1) + 
+  xlab('SCAN #') + ylab('TRec, Pol. Y') + 
+  guides(color=FALSE)
+
+grid.arrange(p1, p2, ncol = 2)
+```
+
+```{r dpi=180, fig.height=9, echo=F, message=FALSE, warning=FALSE}
+p1 <- ggplot(aes(factor(SCAN), tsys_X), data=atmclean) + 
+  geom_point(aes(color=ANTENNA), position=position_jitter(w=0.1, h=0)) + 
+  geom_boxplot(coef=2) + 
+  facet_wrap( ~ BB, ncol=1) + 
+  xlab('SCAN #') + ylab('TSys, Pol. X') + 
+  guides(color=FALSE)
+
+p2 <- ggplot(aes(factor(SCAN), tsys_Y), data=atmclean) +  
+  geom_point(aes(color=ANTENNA), position=position_jitter(w=0.1, h=0)) + 
+  geom_boxplot(coef=2) + 
+  facet_wrap( ~ BB, ncol=1) + 
+  xlab('SCAN #') + ylab('TSys, Pol. Y') + 
+  guides(color=FALSE)
+
+grid.arrange(p1, p2, ncol = 2)
+
+# fit1 <- rqss(phsel$PHASE_RMS~qss(phsel$BLLENGTH, lambda=20),tau=0.05)
+# fit2 <- rqss(phsel$PHASE_RMS~qss(phsel$BLLENGTH, lambda=20),tau=0.9)
+```
+
+\pagebreak
+
+# Delay
+
+```{r fig.height=9, warning=FALSE, echo=FALSE, message=FALSE}
+
+delay_uid <- 
+  subset(delay, 
+         BAND == as.character(sbsum[1, 'band']) & 
+           as.character(ANTENNA) %in% antennas$ANTENNA)
+
+if (nrow(delay_uid) > 0) {
+  p1 <- ggplot(aes(as.factor(TIME), delay_X * 1E9), data = delay_uid) + 
+    geom_point(aes(color = ANTENNA)) + 
+    geom_hline(yintercept = c(0.25, 0, -0.25), linetype = c(2,1,2)) +
+    facet_wrap( ~ BB, ncol=1) +
+    guides(color=F)
+  
+  p2 <- ggplot(aes(as.factor(TIME), delay_Y * 1E9), data = delay_uid) + 
+    geom_point(aes(color = ANTENNA)) + 
+    geom_hline(yintercept = c(0.25, 0, -0.25), linetype = c(2,1,2)) +
+    facet_wrap( ~ BB, ncol=1) +
+    guides(color=F)
+
+  grid.arrange(p1, p2, ncol = 2)
+} else {
+  cat("No delays Observations with this band in the last 6 hours.\n")
+}
+
+```
+
+\pagebreak
+
+# Phase
+```{r warning=FALSE, echo=FALSE, message=FALSE}
+if (ch == 1) {
+  kable(ph_flag,
+        caption = "Antennas with Phase Issues")
+}
+```
+
+
+```{r fig.height=9, warning=FALSE, echo=FALSE, message=FALSE}
+for (i in phscan$SCAN) {
+  phsel <- subset(phase, SCAN == i)    
+  blph <- ggplot(aes(BLLENGTH, PHASE_RMS), data = phsel) + 
+    geom_point(alpha=0.3) + 
+    stat_quantile(
+      method = 'rqss',
+      formula = y ~ qss(x, lambda = 25, constraint="N"), quantiles = c(0.05, 0.95)) +
+    coord_cartesian(ylim = c(0,120)) +
+    facet_grid(BB ~ POL) +
+    ggtitle(as.character(i))
+  print(blph)
+  
+  cat('\r\n\r\n')
+}
+```
