@@ -24,7 +24,7 @@ library(knitr)
 library(locfit)
 theme_set(theme_bw())
 
-dire <- "Xa16f89_X1e17/"
+dire <- "Xa1a7ec_X5d4/"
 
 antennas <- read.csv(paste(dire, 'antennas.csv', sep = ""))
 caldata <- read.csv(paste(dire, 'caldata.csv', sep = ""))
@@ -156,6 +156,7 @@ target_subscan <- subscan %>% subset(SCAN %in% target_scan$SCAN & INTENT == "ON_
 
 time_on_source <- sum(target_subscan$delta)
 
+fieldsrc <- left_join(fieldsrc, select(scparam, paramRef, intTime), on='paramRef')
 
 ```
 
@@ -163,9 +164,10 @@ Num Antennas: `r length(antennas$ANTENNA)`.
 
 Total Execution Time: `r format(ttot, digits = 3, nsmall=1)`.
 
-EB Integration Time on Source: `r format(as.numeric(time_on_source, units="mins"), digits = 3, nsmall=1)` mins.
+EB Integration Time on Source: 
+`r format(as.numeric(time_on_source, units="mins"), digits = 3, nsmall=1)` mins.
 
-SB Requested Time on Source: `r format(nrow(fieldsrc) * scparam$intTime / 60, digits = 3, nsmall = 1)` mins.
+SB Requested Time on Source: `r format(sum(fieldsrc$intTime) / 60, digits = 3, nsmall = 1)` mins.
 
 Is Polarization? `r ifelse(as.logical(sbsum$isPolarization[1]) == TRUE, "True", "False")`.
 
